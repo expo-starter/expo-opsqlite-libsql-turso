@@ -68,7 +68,8 @@ export default function Home() {
               variant={"ghost"}
               onPress={() => {
                 sqlite.sync();
-                queryClient.invalidateQueries({ queryKey: ["habits", "list"] });
+                queryClient.invalidateQueries({ queryKey: ["cards", "list"] });
+                refetch()
               }}
             >
               <Text>Sync</Text>

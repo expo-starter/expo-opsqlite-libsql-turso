@@ -21,11 +21,11 @@ import { useCreateCardMutation } from "@/db/queries";
 const formSchema = createInsertSchema(cardTable, {
   question: (schema) =>
     schema.question.min(4, {
-      message: "Please enter a habit name.",
+      message: "Please enter the memory card question.",
     }),
   answer: (schema) =>
     schema.answer.min(1, {
-      message: "We need to know.",
+      message: "Please enter the memory card answer.",
     }),
 });
 
@@ -77,7 +77,7 @@ export default function FormScreen() {
                 label="Question"
                 placeholder="Question"
                 className="text-foreground"
-                description="Memorize this question"
+                description="Enter the question"
                 autoCapitalize="none"
                 {...field}
               />
@@ -91,7 +91,7 @@ export default function FormScreen() {
               <FormTextarea
                 label="Answer"
                 placeholder="Answer"
-                description="Memorize the answer"
+                description="Enter the answer"
                 {...field}
               />
             )}
